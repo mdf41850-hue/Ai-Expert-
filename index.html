@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Expert</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #101827;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+header {
+  padding: 25px;
+  font-size: 30px;
+  color: #38bdf8;
+  font-weight: bold;
+}
+.container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+}
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+button {
+  padding: 14px 30px;
+  margin-top: 15px;
+  background: #0284c7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+}
+#answer {
+  margin-top: 25px;
+  padding: 20px;
+  background: #1e293b;
+  border-radius: 12px;
+  min-height: 60px;
+}
+</style>
+</head>
+
+<body>
+
+<header>🤖 AI EXPERT</header>
+
+<div class="container">
+  <h2>आपका अपना AI Assistant</h2>
+  <p>मुझसे कुछ भी पूछिए।</p>
+
+  <textarea id="question"
+    placeholder="अपना सवाल लिखें..."></textarea>
+
+  <br>
+
+  <button onclick="showMessage()">
+    Send Message
+  </button>
+
+  <div id="answer">
+    आपका जवाब यहां दिखाई देगा।
+  </div>
+</div>
+
+<script>
+function showMessage() {
+  const question =
+    document.getElementById("question").value.trim();
+
+  const answer =
+    document.getElementById("answer");
+
+  if (!question) {
+    answer.innerText = "पहले अपना सवाल लिखिए।";
+    return;
+  }
+
+  answer.innerText =
+    "आपका सवाल मिला: " + question +
+    "\n\nAI जवाब की सुविधा अगले चरण में जोड़ी जाएगी।";
+}
+</script>
+
+</body>
+</html>
